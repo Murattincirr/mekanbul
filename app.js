@@ -1,4 +1,5 @@
 var createError = require('http-errors');
+require('./app_server/models/db')
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -10,7 +11,7 @@ var usersRouter = require('./app_server/routes/users');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname,"app_server",'views'));
+app.set('views', path.join(__dirname, 'app_server','views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));

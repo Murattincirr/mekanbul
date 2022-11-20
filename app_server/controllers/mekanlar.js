@@ -1,86 +1,85 @@
+var express = require('express');
+var router = express.Router();
 
-var express = require("express");
-
-const anaSayfa = function(req,res){
-    res.render("anasayfa",{
-    "baslik":"Anasayfa",
-    "sayfaBaslik":{
-        "siteAd":"MekanBul",
-        "slogan":"Civardaki Mekanları Keşfet!"
-    },
-    "mekanlar":[
+const anaSayfa=function(req, res, next) {
+    res.render('anasayfa', { 
+      'baslik': 'Anasayfa',
+      'sayfaBaslik':{
+        'siteAd': 'MekanBul',
+        'slogan': 'Civardaki Mekanları Keşfet'
+      },
+      'mekanlar': [
         {
-            "ad":"Starbucks",
-            "puan": "3",
-            "adres":"Centrum Garden AVM",
-            "imkanlar":["Kahve","Çay","Kek"],
-            "mesafe":"10km"
+          'ad': 'Starbucks',
+          'puan': 4,
+          'adres': 'Centrum Garden AVM',
+          'imkanlar': ['Dünya Kahveleri','Kek','Pasta'],
+          'mesafe': '10km'
         },
         {
-            "ad":"Arabica",
-            "puan": "4",
-            "adres":"Doğu Kampüsü",
-            "imkanlar":["Kahve"],
-            "mesafe":"4km"
+          'ad': 'Barida Cam Kafe',
+          'puan': 5,
+          'adres': 'SDÜ Batı Kampüsü',
+          'imkanlar': ['Mühendis Gençler', 'Çay', 'Kahve', 'Tost'],
+          'mesafe': '1km'
         },
         {
-            "ad":"Köfteci Yusuf",
-            "puan": "5",
-            "adres":"Çünür",
-            "imkanlar":["Köfte"],
-            "mesafe":"7km"
-        },
-        ]   
-    })
-};
-        
-
-const mekanBilgisi = function(req,res){
-    res.render("mekanbilgisi",
-    {"baslik":"Mekan Bilgisi",
-    "mekanBaslik":"Starbucks",
-    "mekanDetay":{
-        "ad":"Startbucks",
-        "puan":"3",
-        "adres":"Centrum Garden",
-        "saatler":[
-            {
-            "gunler":"Pazartesi - Cuma",
-            "acilis":"9:00 - 23:00",
-            "kapali":"false"
-            },
-            {
-            "gunler":"Cumartesi - Pazar",
-            "acilis":"10:00 - 23:00",
-            "kapali":"false"
-            }
-        ],
-        "imkanlar":["Kahce","Çay","Kek"],
-        "koordinatlar":{
-            "enlem":"37.7",
-            "boylam":"30.5"
-        },
-        "yorumlar":[
-        {
-            "yorumYapan":"Ferdi KIZGIR",
-            "yorumMetni":"Nasıll yapıyor",
-            "tarih":"12 EKİM 2022",
-            "puan":"2"
+          'ad': 'Popeyes',
+          'puan': 3,
+          'adres': 'İyaşpark AVM',
+          'imkanlar': ['Tavuk', 'Burger', 'İçecek'],
+          'mesafe': '1km'
         }
-    ]
+      ]   
+    
+    });
 }
 
+const mekanBilgisi=function(req, res, next) {
+    res.render('mekanbilgisi', { 
+      'baslik': 'Mekan Bilgisi',
+      'mekanBaslik': 'Starbucks',
+      'mekanDetay': {
+        'ad': 'Starbucks',
+        'puan': 4,
+        'adres': 'Centrum Garden AVM',
+        'saatler': [
+          {
+            'gunler': 'Pazartesi-Cuma',
+            'acilis': '07:00',
+            'kapanis': '23:00',
+            'kapali': false
+          },
+          {
+            'gunler': 'Cumartesi-Pazar',
+            'acilis': '09:00',
+            'kapanis': '22:00',
+            'kapali': false
+          }
+        ],
+        'imkanlar': ['Dünya Kahveleri', 'Kek', 'Pasta'],
+        'koordinatlar': {
+          'enlem': 37.78,
+          'boylam': 30.56
+        },
+        'yorumlar': [
+          {
+            'yorumYapan': 'Erdi KIZGIR',
+            'yorumMetni': 'Bööööörek yiyoruz !!!',
+            'tarih': '8 Ağustos 2022',
+            'puan': 4
+          }
+        ]
+      }     
+    });
+}
 
+const yorumEkle=function(req, res, next) {
+  res.render('yorumekle', { title: 'Yorum Ekle' });
+}
 
-});
-};
-
-const yorumEkle = function(req,res,next){
-    res.render("yorumekle",{title:"Yorum Ekle"});
-};
-
-module.exports = {
-    anaSayfa,
-    mekanBilgisi,
-    yorumEkle
-};
+module.exports={
+  anaSayfa,
+  mekanBilgisi,
+  yorumEkle
+}

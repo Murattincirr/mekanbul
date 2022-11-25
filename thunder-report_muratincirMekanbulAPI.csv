@@ -1,0 +1,23 @@
+Client, Thunder Client
+CollectionName, muratincirMekanbulAPI
+FolderName, 
+EnvironmentName, mekanbul
+DateExported, 2022-11-25T07:59:24.326Z
+Total Iterations, 1
+Total Passed, 1
+Total Failed, 0
+Failed Iterations Numbers, 
+
+
+
+Iteration, 1
+Method, Name, Url, Status, Time, Passed, Total, Result
+POST, mekanEkle, http://localhost:3000/api/mekanlar/, 200, 93 ms, 0, 0, N/A
+GET, mekanlarıListele, http://localhost:3000/api/mekanlar?enlem=37.8&&boylam=30.5, 200, 34 ms, 0, 0, N/A
+GET, mekanGetir, http://localhost:3000/api/mekanlar/637fc81d2c474b14b4a0e7cd, 200, 31 ms, 0, 0, N/A
+PUT, mekanGuncelle, http://localhost:3000/api/mekanlar/637fc81d2c474b14b4a0e7cd, 200, 31 ms, 0, 0, N/A
+POST, yorumEkle, http://localhost:3000/api/mekanlar/637fc81d2c474b14b4a0e7cd/yorumlar/, 201, 26 ms, 0, 0, N/A
+GET, yorumGetir, http://localhost:3000/api/mekanlar/637fc81d2c474b14b4a0e7cd/yorumlar/638074e7448235b8590ea4e6, 200, 12 ms, 0, 0, N/A
+PUT, yorumGuncelle, http://localhost:3000/api/mekanlar/637fc81d2c474b14b4a0e7cd/yorumlar/638074e7448235b8590ea4e6, 200, 25 ms, 0, 0, N/A
+DELETE, yorumSil, http://localhost:3000/api/mekanlar/637fc81d2c474b14b4a0e7cd/yorumlar/638074e7448235b8590ea4e6, 200, 23 ms, 0, 0, N/A
+DELETE, mekanSil, http://localhost:3000/api/mekanlar/637fc81d2c474b14b4a0e7cd, 200, 16 ms, 0, 0, N/A

@@ -1,5 +1,5 @@
 # MEKANBUL
-- [Yakındaki Mekanları Listele - Replit Linki](https://mekanbul.muratincir.repl.co/?enlem=33&boylam=37)
+- [Yakındaki Mekanları Listele - Replit](https://mekanbul.muratincir.repl.co/?enlem=33&boylam=37)
   ![](https://github.com/muratincir/mekanbul/blob/odev7/resimler/replit.png)
   
 -  API Collections Test

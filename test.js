@@ -1,22 +1,22 @@
 const expect = require("chai").expect;
-var adres = "mongodb://localhost/mekanbul";
+var adres = "localhost:3000";
 const request = require("supertest").agent(adres);
 describe("POST /api/mekanlar", function () {
   it("Yeni mekan ekle:", async function () {
     const response = await request.post("/api/mekanlar").send({
-      ad: "Starbucks",
-      adres: "Centrum Garden",
+      ad: "Kahve Dünyası",
+      adres: "İyaş",
       puan: 5,
-      imkanlar: "çay,kahve,pasta",
+      imkanlar: "kahve,süt,bal",
       enlem: 37.83226584629666,
       boylam: 30.524732239878013,
       gunler1: "Pazartesi-Cuma",
       acilis1: "9:00",
       kapanis1: "23:00",
       kapali1: false,
-      gunler2: "Cumartesi-Pazar",
-      acilis2: "11:00",
-      kapanis2: "17:00",
+      gunler2: "Cumartesi",
+      acilis2: "10:00",
+      kapanis2: "24:00",
       kapali2: false,
     });
     expect(response.status).to.eql(201);
@@ -43,8 +43,8 @@ describe("PUT /api/mekanlar/:mekanid", function () {
     const response = await request
       .put(`/api/mekanlar/${process.env.mekanid}`)
       .send({
-        ad: "Starbucks SDÜ",
-        adres: "SDÜ Doğu Kampüsü",
+        ad: "Çünür Pide",
+        adres: "Çünür",
         puan: 3,
         imkanlar: "çay,kahve,pasta,refresher",
         enlem: 37.8,

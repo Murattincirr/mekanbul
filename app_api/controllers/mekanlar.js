@@ -167,5 +167,5 @@ module.exports = {
     mekanEkle,
     mekanGetir,
     mekanSil,
-    mekanGuncelle,
+    mekanGuncelle
 }

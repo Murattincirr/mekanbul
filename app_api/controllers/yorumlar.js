@@ -55,6 +55,7 @@ var yorumOlustur = function (req, res, gelenMekan) {
     }
 };
 const yorumEkle = (req, res) => {
+    var mekanAdi=req.session.mekanAdi
     const mekanid = req.params.mekanid;
     if (mekanid) {
         Mekan
